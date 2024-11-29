@@ -2,13 +2,19 @@ const newArrivals = document.getElementById("new-arrivals");
 
 window.addEventListener("load", async () => {
   const res = await fetch("https://dummyjson.com/products?limit=4");
-  const products = await res.json();
+  const products = await res.json(); // {   products: [{thumbnail: "img"},{},{},{}]   }
 
   const productArray = products.products;
 
   for (let i = 0; i < productArray.length; i++) {
     const productDiv = document.createElement("div");
+    const productLink = document.createElement("a");
+
     const productImg = document.createElement("img");
+
+    productLink.setAttribute("href", `product-page.html?id=${i + 1}`);
+
+    productLink.appendChild(productImg);
 
     productImg.setAttribute("src", productArray[i].thumbnail);
 
@@ -23,14 +29,13 @@ window.addEventListener("load", async () => {
     const pricePara = document.createElement("p");
     pricePara.innerText = `$ ${productArray[i].price}`;
 
-    productDiv.append(productImg, titlePara, ratingPara, pricePara);
+    productDiv.append(productLink, titlePara, ratingPara, pricePara);
 
     newArrivals.appendChild(productDiv);
   }
-  console.log(productArray);
 });
 /*
-
+<a href="product.html?id=1"
 <div class="product">
           <img
             src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png"

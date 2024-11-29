@@ -69,3 +69,9 @@ main {
   height: 84vh;
   background-color: #f0f0f0;
 }
+
+/* new arrivals products */
+
+.products {
+  display: flex;
+}
