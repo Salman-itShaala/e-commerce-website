@@ -75,3 +75,13 @@ main {
 .products {
   display: flex;
 }
+
+/* product page styling */
+
+.product-section {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  gap: 4vw;
+  padding: var(--common-padding);
+}
