@@ -9,6 +9,16 @@
   box-sizing: border-box;
 }
 
+/* scrollbar styling */
+::-webkit-scrollbar {
+  background-color: rgb(188, 188, 188);
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 10px;
+}
+
 :root {
   --primary-brand-color: #000;
   --common-padding: 0 8vw;
@@ -147,3 +157,34 @@ rating
   content: "☆☆☆☆☆";
 }
 /* color: #FFC633; */
+
+/* cart - page */
+
+.cart-section h2 {
+  font-family: "Candal", sans-serif;
+  padding-bottom: 4vh;
+}
+
+.cart-section {
+  padding: var(--common-padding);
+}
+
+.cart-content {
+  display: flex;
+}
+
+.cart-left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.cart-product {
+  display: flex;
+
+  justify-content: space-between;
+}
+.cart-product img {
+  width: 20%;
+  height: auto;
+}

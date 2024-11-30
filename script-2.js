@@ -27,6 +27,7 @@ window.addEventListener("load", async () => {
         <p>
           ${product.description}
         </p>
+        <button onclick="addTocard(${id})">Add To Cart</button>
       </div>
 `;
 
@@ -36,26 +37,13 @@ window.addEventListener("load", async () => {
   }
 });
 
-/*
-<div class="product-img">
-        <img
-          src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
-          alt=""
-        />
-</div>
-      <div class="producct-details">
-        <p>Essence Mascara Lash Princess</p>
-        <p>4.5</p>
-        <p>$ 123</p>
-        <p>
-          The Essence Mascara Lash Princess is a popular mascara known for its
-          volumizing and lengthening effects. Achieve dramatic lashes with this
-          long-lasting and cruelty-free formula.
-        </p>
-      </div>
-
-*/
-
-localStorage.setItem("cart-items", [1, 2, 3]);
-
-console.log(localStorage.getItem("cart-items"));
+function addTocard(id) {
+  const productsInCart = localStorage.getItem("cart-products");
+  if (!productsInCart) {
+    localStorage.setItem("cart-products", [id]);
+  }
+  const idsArray = productsInCart.split(","); // 1,2,3 = [2,3,1,1,1,1]
+  // check if that id already exists in cart array
+  idsArray.push(id);
+  localStorage.setItem("cart-products", idsArray);
+}

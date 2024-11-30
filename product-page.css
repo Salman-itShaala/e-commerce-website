@@ -1,3 +1,5 @@
+@import url("style.css");
+
 .product-section {
   display: flex;
   justify-content: space-between;

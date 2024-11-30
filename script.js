@@ -30,6 +30,7 @@ window.addEventListener("load", async () => {
   class="rating"
   style="--rating: ${productArray[i].rating}"
   aria-label="Rating: ${productArray[i].rating} out of 5" >
+  
   </div> `;
 
     const pricePara = document.createElement("p");
