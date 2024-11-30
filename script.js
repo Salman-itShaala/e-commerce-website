@@ -19,14 +19,21 @@ window.addEventListener("load", async () => {
     productImg.setAttribute("src", productArray[i].thumbnail);
 
     const titlePara = document.createElement("p");
+    titlePara.classList.add("product-price");
 
     titlePara.innerText = productArray[i].title;
 
     const ratingPara = document.createElement("p");
 
-    ratingPara.innerHTML = productArray[i].rating;
+    // to-do add 2.5 / 5 after start
+    ratingPara.innerHTML = `<div
+  class="rating"
+  style="--rating: ${productArray[i].rating}"
+  aria-label="Rating: ${productArray[i].rating} out of 5" >
+  </div> `;
 
     const pricePara = document.createElement("p");
+    pricePara.classList.add("product-price");
     pricePara.innerText = `$ ${productArray[i].price}`;
 
     productDiv.append(productLink, titlePara, ratingPara, pricePara);
